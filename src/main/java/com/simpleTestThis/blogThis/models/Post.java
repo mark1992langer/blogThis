@@ -5,15 +5,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+//Отвечает за хранение всех статей в базе данных. База данных названа: spring_web_blog
+
+@Entity //Аннотация для модели
 public class Post {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    //переменные отвечают за поля в таблице базы данных post
 
-    private String title, anons, full_text;
-    private int views;
+    @Id // для уникального идентификатора нужна аннотация из пакета javax.persistence
+    @GeneratedValue(strategy = GenerationType.AUTO) // Генерирует новый id автоматически
+    private Long id; // это уникальный идентификатор
+    private String title, anons, full_text; // название, анонс, полный текст статьи
+    private int views; //количество просмотров
+
+    //далее идут методы получения данных из полей и назначение данных в соответствующее поле
 
     public Long getId() {
         return id;
@@ -54,6 +59,8 @@ public class Post {
     public void setViews(int views) {
         this.views = views;
     }
+
+    //далее идут два конструктора класса Post
 
     public Post() {
     }

@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-    @GetMapping("/")
+    @GetMapping("/") // Какую страницу мы обрабатываем
     public String home( Model model) {
-        model.addAttribute("title", "this");
-        return "this";
+        model.addAttribute("title", "thisIs"); // параметр передающийся в шаблон, название страницы
+        return "this"; // В нашем случае это html страница this из папки templates
     }
 
     @GetMapping("/Nadik")
     public String Nadik(Model model){
-        model.addAttribute("title", "Надик ты чудо:)");
+        model.addAttribute("title", "Инфо");
         return "nadik";
     }
 
