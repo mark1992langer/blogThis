@@ -1,7 +1,7 @@
 package com.simpleTestThis.blogThis.controllers;
 
 import com.simpleTestThis.blogThis.models.Post;
-import com.simpleTestThis.blogThis.repo.PostRepository;
+import com.simpleTestThis.blogThis.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

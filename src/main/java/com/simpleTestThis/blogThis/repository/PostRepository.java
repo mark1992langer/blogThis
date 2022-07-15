@@ -1,4 +1,4 @@
-package com.simpleTestThis.blogThis.repo;
+package com.simpleTestThis.blogThis.repository;
 
 import com.simpleTestThis.blogThis.models.Post;
 import org.springframework.data.repository.CrudRepository;

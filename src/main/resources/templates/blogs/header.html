@@ -10,13 +10,11 @@
             <a class="me-3 py-2 text-dark text-decoration-none" href="/blog">Блог</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="/blog/add">Добавить статью</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="/Nadik">О нас</a>
-
+<!--            <a th:action="@{/login}" method="post" class="me-3 py-2 text-dark text-decoration-none" href="/login">in</a>-->
+<!--            <a th:action="@{/logout}" method="post" class="me-3 py-2 text-dark text-decoration-none" href="/">out</a>-->
+            <form th:action="@{/login}" method="post"><input type="submit" value="Войти"/></form>
+            <form th:action="@{/logout}" method="post"><input type="submit" value="Выйти"/></form>
         </nav>
-        <form th:action="@{/login}" method="post">
-            <input type="submit" value="Sign in"/>
-        </form>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
+
     </div>
 </div>
