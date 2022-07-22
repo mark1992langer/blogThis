@@ -12,18 +12,18 @@ public class MainController {
     @GetMapping("/") // Какую страницу мы обрабатываем
     public String home( Model model) {
         model.addAttribute("title", "thisIs"); // параметр передающийся в шаблон, название страницы
-        return "this"; // В нашем случае это html страница this из папки templates
+        return "pages_html/this"; // В нашем случае это html страница this из папки templates
     }
 
     @GetMapping("/Nadik")
     public String Nadik(Model model){
         model.addAttribute("title", "Инфо");
-        return "nadik";
+        return "pages_html/nadik";
     }
 
     @GetMapping("/login")
     public String Login(Model model){
         model.addAttribute("title", "регистрация");
-        return "login";
+        return "testlogin";
     }
 }

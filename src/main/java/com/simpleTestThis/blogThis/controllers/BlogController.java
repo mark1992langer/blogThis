@@ -27,12 +27,12 @@ public class BlogController {
         public String blogMain(Model model){
         Iterable<Post>posts = postRepository.findAll(); //здесь будут сод все значения из таблицы
         model.addAttribute("posts", posts);
-        return "blog-main";
+        return "pages_html/blogs_html/blog-main";
     }
 
-    @GetMapping("/blog/add")// добавление статьи
+    @GetMapping("/blog/add")// форма добавление статьи
     public String blogAdd(Model model){
-        return "blog-add";
+        return "pages_html/blogs_html/blog-add";
     }
 
     @PostMapping("/blog/add")//получение всех данных статьи и занесение их в базу
@@ -51,7 +51,7 @@ public class BlogController {
         ArrayList<Post> res = new ArrayList<>();
         post.ifPresent(res::add);
         model.addAttribute("post", res);
-        return "blog-details";
+        return "pages_html/blogs_html/blog-details";
     }
 
     @GetMapping("/blog/{id}/edit")//переходим к редактированию
@@ -63,7 +63,7 @@ public class BlogController {
         ArrayList<Post> res = new ArrayList<>();
         post.ifPresent(res::add);
         model.addAttribute("post", res);
-        return "blog-edit";
+        return "pages_html/blogs_html/blog-edit";
     }
 
     @PostMapping("/blog/{id}/edit")//совершаем редактирование
