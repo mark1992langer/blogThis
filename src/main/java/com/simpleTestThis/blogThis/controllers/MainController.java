@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MainController {
 
     @GetMapping("/") // Какую страницу мы обрабатываем
-    public String home( Model model) {
+    public String home(Model model) {
         model.addAttribute("title", "thisIs"); // параметр передающийся в шаблон, название страницы
         return "pages_html/this"; // В нашем случае это html страница this из папки templates
     }
 
     @GetMapping("/Nadik")
-    public String Nadik(Model model){
+    public String Nadik(Model model) {
         model.addAttribute("title", "Инфо");
         return "pages_html/nadik";
     }
 
     @GetMapping("/login")
-    public String Login(Model model){
+    public String Login(Model model) {
         model.addAttribute("title", "регистрация");
         return "pages_html/login";
     }

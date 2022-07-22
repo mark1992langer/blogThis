@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BlogThisApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BlogThisApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(BlogThisApplication.class, args);
+    }
 }

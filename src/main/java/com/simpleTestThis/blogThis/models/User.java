@@ -34,7 +34,7 @@ public class User {
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(	name = "tb_users_roles",
+    @JoinTable(name = "tb_users_roles",
             joinColumns = @JoinColumn(
                     name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
@@ -103,5 +103,4 @@ public class User {
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
     }
-
 }
