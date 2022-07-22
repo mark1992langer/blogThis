@@ -24,6 +24,6 @@ public class MainController {
     @GetMapping("/login")
     public String Login(Model model){
         model.addAttribute("title", "регистрация");
-        return "testlogin";
+        return "pages_html/login";
     }
 }

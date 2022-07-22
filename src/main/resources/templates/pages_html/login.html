@@ -1,81 +1,70 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+	<head>
+  		<title>Login 10</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    </head>
+	<body style="background-image: url('https://mdbootstrap.com/img/Photos/new-templates/psychologist/img1.jpg');">
+		<div>
+			<div th:insert="blogs/nav :: nav"></div>
+			<div class="container position-absolute top-50 start-50 translate-middle">
+				<div class="row justify-content-center">
+					<div class="col-md-6 text-center mb-2">
+						<h2 class="heading-section">Login</h2>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-md-6 col-lg-4">
+						<div class="login-wrap p-0">
+					  		<h3 class="mb-4 text-center">Have an account?</h3>
+					  		<div class="container mt-2 mb-2">
+								<form th:action="@{/login}" method="post" class="signin-form">
+							  		<div th:if="${param.error}" class="form-group mb-2">
+								  		<div class="alert alert-danger-opacity-10">Invalid username or password</div>
+							  		</div>
+							  		<div th:if="${param.logout}" class="form-group mb-2">
+								  		<div class="alert alert-info-opacity-10">You have been logged out.</div>
+									</div>
+									<div class="form-group mb-2">
+										<input type="text" class="form-control"
+											   id="username" name="username" placeholder="Username" autofocus="autofocus"/>
+									</div>
+									<div class="form-group mb-2">
+						  				<input type="password" class="form-control"
+											   id="password" name="password" placeholder="Password"/>
+									</div>
+									<div class="form-group mb-2">
+						  				<button type="submit" name="login-submit" id="login-submit"
+												class="form-control btn btn-primary submit px-3" value="Login">Sign In</button>
+									</div>
+									<div class="form-group d-md-flex justify-content-center">
+						  				<div class="text-md-right ">
+											<span>New User? <a href="/" th:href="@{/registration}">Register here</a></span>
+						  				</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div th:insert="blogs/footer :: footer" class="fixed-bottom"></div>
+		<!-- JavaScript Libraries -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+		<script src="lib/easing/easing.min.js"></script>
+		<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+		<script src="lib/isotope/isotope.pkgd.min.js"></script>
+		<script src="lib/lightbox/js/lightbox.min.js"></script>
 
-<head>
-    <meta charset="utf-8">
-    <title>Registration/Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+		<!-- Contact Javascript File -->
+		<script src="mail/jqBootstrapValidation.min.js"></script>
+		<script src="mail/contact.js"></script>
 
-</head>
-
-<body>
-<div th:insert="blogs/nav :: nav"></div>
-<!-- create navigation bar ( header) -->
-<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
-<!--    <div class="container">-->
-<!--        <div class="navbar-header">-->
-<!--            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"-->
-<!--                    aria-expanded="false" aria-controls="navbar">-->
-<!--                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span-->
-<!--                    class="icon-bar"></span> <span class="icon-bar"></span>-->
-<!--            </button>-->
-<!--            <a class="navbar-brand" href="#" th:href="@{/}">Registration and-->
-<!--                Login Module</a>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</nav>-->
-<!--<header th:insert="blogs/header :: header" ></header>-->
-<br>
-<br>
-
-<!-- Create HTML registration form -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-
-            <h1>User Login Page</h1>
-
-            <form th:action="@{/login}" method="post">
-
-                <!-- Error message -->
-                <div th:if="${param.error}">
-                    <div class="alert alert-danger">Invalid username or password</div>
-                </div>
-
-                <!-- Logout message -->
-                <div th:if="${param.logout}">
-                    <div class="alert alert-info">You have been logged out.</div>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="control-label" for="username"> Username</label>
-                    <input type="text" class="form-control" id="username" name="username"
-                           placeholder="Login or email" autofocus="autofocus"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label" for="username"> password</label>
-                    <input type="password" class="form-control" id="password" name="password"
-                           placeholder="Enter password"/>
-                </div>
-
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3">
-                            <input type="submit" name="login-submit" id="login-submit"
-                                   class="form-control btn btn-primary" value="Login"/>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <div class="form-group">
-					<span>New User? <a href="/" th:href="@{/registration}">Register
-							here</a></span>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
-
+		<!-- Template Javascript -->
+		<script src="js/main.js"></script>
+	</body>
 </html>
+
